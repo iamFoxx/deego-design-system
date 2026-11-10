@@ -44,14 +44,14 @@ In a conversation, send the new DESIGN.md (or a link to its documentation) and a
 4. Add a row to the "Available systems" table in `deego-design-system/SKILL.md`:
    `| \`<id>\` | Readable name | When to use | no |`
    If the system should trigger by name, add the name to the SKILL.md `description` too.
-5. Run `./scripts/check.py`.
+5. Run `python3 scripts/check.py`.
 6. Commit, tag and install the new version (below).
 
 To change the default system, move the "yes" in the table's last column (there can be only one).
 
 ## Install and update
 
-**claude.ai and desktop app:** run `./scripts/package.sh` (or download the zip from the latest release) and upload `dist/deego-design-system.zip` in Settings › Skills. To update, upload the new zip; it replaces the previous version. Don't use GitHub's green "Download ZIP" button: it wraps the whole repository and the uploader rejects it.
+**claude.ai and desktop app:** run `bash scripts/package.sh` (or download the zip from the latest release) and upload `dist/deego-design-system.zip` in Settings › Skills. To update, upload the new zip; it replaces the previous version. Don't use GitHub's green "Download ZIP" button: it wraps the whole repository and the uploader rejects it.
 
 **Claude Code:** symlink the skill folder into your personal skills folder so changes apply without reinstalling:
 
