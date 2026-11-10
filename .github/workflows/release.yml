@@ -1,0 +1,20 @@
+# Validates on every push and pull request. On a tag (e.g. v1.1.0), builds the zip
+# and attaches it to a GitHub Release.
+name: build
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/package.sh
+      - if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/deego-design-system.zip
