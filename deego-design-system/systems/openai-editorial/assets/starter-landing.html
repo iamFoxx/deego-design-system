@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian — example landing page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Reference example. When delivering a single file, inline tokens.css and components.css here. -->
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+.hero { min-height: calc(78vh - var(--nav-height)); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--spacing-32); text-align: center; padding-top: var(--spacing-64); padding-bottom: var(--spacing-64); }
+.features-title { max-width: 720px; margin-bottom: var(--spacing-40); }
+.features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-40) var(--spacing-64); }
+.features p { margin: var(--spacing-8) 0 0; }
+@media (max-width: 768px) { .features { grid-template-columns: 1fr; } }
+.quote > * { max-width: 760px; }
+.quote p { margin: 0 0 var(--spacing-16); font-size: var(--text-subheading); line-height: 1.4; }
+.cta { display: grid; justify-items: start; gap: var(--spacing-16); }
+.cta p { margin: 0; }
+</style>
+</head>
+<body>
+<header class="nav"><div class="container nav-inner">
+  <a class="nav-brand" href="#">Meridian</a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#">Research</a><a href="#">Product</a><a href="#">Business</a><a href="#">Developers</a><a href="#">About</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="btn btn-ghost" href="#">Log in</a>
+    <a class="btn btn-filled" href="#">Try it</a>
+  </div>
+</div></header>
+
+<main>
+  <section class="container hero">
+    <h1 class="t-display">What can I help with?</h1>
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="text" placeholder="Plan a surf trip to Costa Rica in August" aria-label="Ask">
+    </label>
+    <div class="chip-row">
+      <button class="btn btn-outline">Talk to the assistant</button>
+      <button class="btn btn-outline">Research</button>
+      <button class="btn btn-outline">API platform</button>
+      <button class="btn btn-outline">For business</button>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="section-header"><h2>Highlights</h2><a href="#">View more</a></div>
+    <div class="editorial-grid">
+      <article class="card card-featured">
+        <div class="card-media ph-deep" role="img" aria-label="Featured image"></div>
+        <h3 class="card-title">A new model for scientific reasoning</h3>
+        <span class="card-meta">Research · 12 min read</span>
+      </article>
+      <div class="editorial-stack">
+        <article class="card">
+          <div class="card-media ph-sunrise" role="img" aria-label="Article image"></div>
+          <h3 class="card-title">How teams use agents day to day</h3>
+          <span class="card-meta">Business · 6 min read</span>
+        </article>
+        <article class="card">
+          <div class="card-media ph-violet" role="img" aria-label="Article image"></div>
+          <h3 class="card-title">Notes on safety and evaluation</h3>
+          <span class="card-meta">Safety · 9 min read</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-lg">
+    <div class="section-header"><h2>Product</h2></div>
+    <h2 class="t-heading features-title">Tools that disappear so the work stays in view.</h2>
+    <div class="features">
+      <div><h3 class="t-subheading">Long context</h3><p class="t-body t-muted">Works across whole documents, codebases and conversation histories without losing the thread.</p></div>
+      <div><h3 class="t-subheading">Tools</h3><p class="t-body t-muted">Connects to your systems to read, write and act where the work already happens.</p></div>
+      <div><h3 class="t-subheading">Privacy</h3><p class="t-body t-muted">Your organization's data stays yours, with access and retention controls.</p></div>
+      <div><h3 class="t-subheading">Scale</h3><p class="t-body t-muted">From the first experiment to production, with the same API.</p></div>
+    </div>
+  </section>
+
+  <section class="container section-lg quote">
+    <p class="t-body-lg">“We went from weeks to hours preparing reports, without changing how the team works.”</p>
+    <span class="t-label t-muted">[Customer name], [Role]</span>
+  </section>
+
+  <section class="container section-lg cta">
+    <h2 class="t-heading">Start today.</h2>
+    <p class="t-body t-muted">Free to try. No card required.</p>
+    <a class="btn btn-outline" href="#">See plans</a>
+  </section>
+</main>
+
+<footer class="footer"><div class="container">
+  <div class="footer-cols">
+    <div><h3>Research</h3><a href="#">Publications</a><a href="#">Safety</a><a href="#">Index</a></div>
+    <div><h3>Product</h3><a href="#">Assistant</a><a href="#">API</a><a href="#">Pricing</a></div>
+    <div><h3>Company</h3><a href="#">About</a><a href="#">Careers</a><a href="#">News</a></div>
+    <div><h3>Terms</h3><a href="#">Privacy</a><a href="#">Usage</a><a href="#">Cookies</a></div>
+  </div>
+  <p class="footer-legal">Meridian © 2026</p>
+</div></footer>
+</body>
+</html>

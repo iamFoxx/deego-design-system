@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Tokens — OpenAI Editorial (monochrome editorial style)
+   Values from DESIGN.md, with fixes and extensions marked [derived].
+   Inline into the file's <style>.
+   Font: load Inter from Google Fonts (400, 500, 600):
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* Colors */
+  --color-obsidian: #000000;   /* primary text, filled button */
+  --color-graphite: #666666;   /* secondary text, metadata, section labels */
+  --color-smoke: #8f8f8f;      /* placeholders, disabled, icons (not for running text) */
+  --color-paper: #ffffff;      /* background, cards, inputs */
+  --color-ash: #f1f1f1;        /* subtle surface, hover/selected */
+  --color-hairline: rgba(0, 0, 0, 0.12);  /* every border and divider */
+  --color-whisper: rgba(0, 0, 0, 0.04);   /* hover tint on ghost buttons and selection */
+
+  /* Semantic roles (use these in code) */
+  --text-primary: var(--color-obsidian);
+  --text-secondary: var(--color-graphite);
+  --text-tertiary: var(--color-smoke);
+  --surface-base: var(--color-paper);
+  --surface-subtle: var(--color-ash);
+  --surface-hover: var(--color-whisper);
+  --border: var(--color-hairline);
+  --action-fill: var(--color-obsidian);
+  --action-on-fill: var(--color-paper);
+  --focus-ring: var(--color-obsidian);
+
+  /* State colors [derived — not in the source]
+     Text, icons or a 1px border only; never as a filled background. */
+  --state-error: #c62828;
+  --state-success: #1b7a3d;
+  --state-warning: #8a5a00;
+
+  /* Typography */
+  --font-sans: 'Inter', 'Söhne', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-features: 'calt' 1, 'liga' 1;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600; /* only on the 28px heading */
+
+  --text-caption: 13px;    --leading-caption: 1.51;    --tracking-caption: -0.13px;
+  --text-label: 14px;      --leading-label: 1.43;      --tracking-label: -0.14px;   /* [derived] nav, buttons, metadata */
+  --text-input: 16px;      --leading-input: 1.5;       --tracking-input: -0.16px;
+  --text-body: 17px;       --leading-body: 1.65;       --tracking-body: -0.17px;    /* [derived] from the source's Do's */
+  --text-body-lg: 18px;    --leading-body-lg: 1.32;    --tracking-body-lg: -0.18px;
+  --text-subheading: 22px; --leading-subheading: 1.26; --tracking-subheading: -0.22px;
+  --text-heading: 28px;    --leading-heading: 1.21;    --tracking-heading: 0.31px;
+  --text-display: 48px;    --leading-display: 1.16;    --tracking-display: -0.03em;
+
+  /* Spacing (4px base) */
+  --spacing-4: 4px;   --spacing-8: 8px;   --spacing-12: 12px; --spacing-16: 16px;
+  --spacing-20: 20px; --spacing-24: 24px; --spacing-32: 32px; --spacing-40: 40px;
+  --spacing-52: 52px; --spacing-64: 64px; --spacing-80: 80px; --spacing-120: 120px;
+
+  /* Layout */
+  --page-max-width: 1200px;
+  --page-gutter: 24px;
+  --section-gap-sm: 32px;
+  --section-gap: 64px;
+  --section-gap-lg: 120px;
+  --element-gap: 16px;
+  --card-padding: 12px;
+  --nav-height: 64px;
+
+  /* Radii */
+  --radius-full: 9999px;   /* buttons, chips, inputs */
+  --radius-card: 6px;      /* cards, images */
+  --radius-link: 4px;      /* links with a hover background */
+
+  /* Shadow — outlined button hover only */
+  --shadow-sm: rgba(0, 0, 0, 0.02) 0px 4px 6px 0px, rgba(0, 0, 0, 0.05) 0px 0px 2px 0px;
+}
+
+/* Responsive scale [derived] */
+@media (max-width: 768px) {
+  :root {
+    --text-display: 36px;    --leading-display: 1.15;
+    --text-heading: 24px;
+    --text-subheading: 20px;
+    --text-body: 16px;
+    --page-gutter: 20px;
+    --section-gap: 48px;
+    --section-gap-lg: 80px;
+  }
+}
+
+/* Dark mode [derived — the source is light only; use only when the environment requires it] */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --text-tertiary: #737373;
+    --surface-base: #0b0b0b;
+    --surface-subtle: #1a1a1a;
+    --surface-hover: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.14);
+    --action-fill: #ffffff;
+    --action-on-fill: #000000;
+    --focus-ring: #ffffff;
+    --state-error: #ff6b6b;
+    --state-success: #5cc98a;
+    --state-warning: #e0b04a;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-tertiary: #737373;
+  --surface-base: #0b0b0b;
+  --surface-subtle: #1a1a1a;
+  --surface-hover: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.14);
+  --action-fill: #ffffff;
+  --action-on-fill: #000000;
+  --focus-ring: #ffffff;
+  --state-error: #ff6b6b;
+  --state-success: #5cc98a;
+  --state-warning: #e0b04a;
+}
